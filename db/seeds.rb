@@ -8,7 +8,7 @@
 
 require "faker"
 Department.destroy_all
-# Item.destroy_all
+Item.destroy_all
 # Comment.destroy_all
 
 4.times do
@@ -16,10 +16,11 @@ Department.destroy_all
     name: Faker::Company.name, 
     manager: Faker::Name.name, 
     num_employees: Faker::Number.number(digits: 2) )
-  # 5.times do
-  #   i1 = Item.create(
-  #     name: Faker::Game.platform,
-  #     sale: Faker::Boolean.boolean)
+  5.times do
+    d1.items.create(
+      name: Faker::Game.platform,
+      sale: false)
+  end
   #   3.times do
   #     Comment.create(
   #       title: Faker::Verb.simple_present,
