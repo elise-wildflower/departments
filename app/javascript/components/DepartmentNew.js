@@ -8,9 +8,9 @@ const DepartmentNew = () => {
         <p>Name</p>
         <input name='department[name]'/>
         <p>Manager</p>
-        <input name="department[manager]" />
+        <input name='department[manager]' />
         <p>Number of Employees</p>
-        <input name="department[num_employees]"/>
+        <input name='department[num_employees]'/>
         <button type="submit">Add</button>
       </form>
       <a href="/">Back</a>

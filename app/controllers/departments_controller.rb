@@ -18,16 +18,15 @@ class DepartmentsController < ApplicationController
 
   def new
     # render "departmentsNew", props:{department:@department} # be the form
-   render component: "DepartmentNew"
+    render component: "DepartmentNew"
   end
 
   def create
     # render "departmentsNew" # be the form
-    @department = Department.new(department_params)
-    if(@department.save)
+    department = Department.new(department_params)
+    if department.save
       redirect_to root_path
     else
-      render :new
     end
   end
 
@@ -52,7 +51,7 @@ class DepartmentsController < ApplicationController
   private
 
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:name, :manager, :num_employees)
   end
   
   def set_department
