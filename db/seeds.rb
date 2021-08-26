@@ -17,10 +17,18 @@ Item.destroy_all
     manager: Faker::Name.name, 
     num_employees: Faker::Number.number(digits: 2) )
   5.times do
-    d1.items.create(
+    i1 = d1.items.create(
       name: Faker::Game.platform,
       sale: rand(2).even?)
+    3.times do
+      i1.comments.create(
+        title: Faker::Emotion.adjective,
+        body: Faker::Quote.matz
+      )
+    end
   end
+end
+
 
 
   ## 
@@ -30,7 +38,6 @@ Item.destroy_all
   #       body: Faker::ChuckNorris.fact)
   #   end
   # end
-end
 
 # require "faker"
 # Department.destroy_all

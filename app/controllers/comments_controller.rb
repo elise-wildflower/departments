@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  # before_action :set_department
+  before_action :set_item
   # before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -22,7 +22,7 @@ private
   end
 
   # def set_comment
-  #   @comment = @department.items.find(params[:id])
+  #   @comment = @item.comment.find(params[:id])
   # end
 
 end

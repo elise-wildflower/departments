@@ -10,8 +10,8 @@ const EditItem = (props) => {  //this is the hash from the items controller#new
         <input type="hidden" name="_method" value="patch" />
         <p>Name</p>
         <input defaultValue={item.name} name="item[name]" />
-        <p>Sale?</p>
-        <input defaultValue={item.sale} name="item[sale]" />
+        <p>Check Box if {item.name} is on sale</p>
+        <input type="checkbox" checked={item.sale} name="item[sale]" />
         <button>Add</button>
       </form>
     </div>
@@ -19,4 +19,6 @@ const EditItem = (props) => {  //this is the hash from the items controller#new
 };
 
 export default EditItem
+
+//prefill the button with a checkmark if the item is on sale.  So if sale==true
 

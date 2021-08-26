@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     def create
       @item = @department.items.new(item_params)  # The boolean might be throwing things off
       if(@item.save)
-        redirect_to departments_items_path(@department.id)
+        redirect_to department_items_path(@department.id)
       else
       end
     end
@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 
     def update
       if(@item.update(item_params))
-        redirect_to departments_items_path(@department.id)
+        redirect_to department_items_path(@department.id)
       else
       end
     end
