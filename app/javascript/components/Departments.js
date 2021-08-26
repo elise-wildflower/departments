@@ -32,16 +32,10 @@ export default (props) =>  {
            <h1>{department.name}</h1>
            <h3>{"Manager: "}{department.manager}</h3>
            <h4>{"Employees: "}{department.num_employees}</h4>
-            <a href={`http://localhost:3000/departments/${department.id}`} style={{padding:"7px"}}>
-              Show
-              </a>
+            <a href={`http://localhost:3000/departments/${department.id}`} style={{padding:"7px"}}>Show </a>
+            <a href={`http://localhost:3000/departments/${department.id}`} style={{padding:"7px"}}>Make this show its particular Items </a>
             <a href={`http://localhost:3000/departments/${department.id}/edit`}style={{padding:"7px"}}>Edit</a>
-            <a
-              href={`http://localhost:3000/departments/${department.id}`}
-              data-method="delete"
-            >
-              Delete
-            </a>
+            <a href={`http://localhost:3000/departments/${department.id}`} data-method="delete"> Delete</a>
           </div>
         ))}
       </>

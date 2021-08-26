@@ -10,7 +10,25 @@ class ItemsController < ApplicationController
       @item = @department.items.find(params[:id])
       render json: @item
     end
+
+    def new
+      render component: "NewItem", props:{banana:@department}  #Putting in the value of department where we write the key "banana" in NewItem
+    end
    
+    def create
+      @item = @department.items.new(item_params)  # The boolean might be throwing things off
+      if(@item.save)
+        redirect_to departments_items_path(@department.id)
+      else
+      end
+    end
+
+    def edit
+    
+    end
+
+
+
     private
     
     def set_department
