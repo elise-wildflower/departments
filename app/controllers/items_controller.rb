@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
     before_action :set_department
     before_action :set_item, only: [:show, :edit, :update, :destroy]
-    
+
   #TODO Something is wrong with my boolean for item_params
 
     def index
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   
     def show
       @item = @department.items.find(params[:id])
-      render json: @item
+      render component: "Comments", props:{item:@item, comments:@item.comments}# ADD HIS CODE HERE THAT TAKES YOU TO THE ITEM AND ITS COMMENTS
     end
 
     def new

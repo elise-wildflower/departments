@@ -1,20 +1,21 @@
 import React from 'react';
 
-const Department = (props) => {  // What's coming in is this department's specific id and it's params.  It's showing the department's attributes
+const Comment = (props) => {  // What's coming in is this department's specific id and it's params.  It's showing the department's attributes
   return (
     <div> 
-      <h1>Department</h1>
-      <p>{props.department.name}</p>  
-      <p>{props.department.manager}</p>
-      <p>{props.department.num_employees}</p>
+      <h1>Comments:</h1>
+      <p>{props.item.name}</p>  
+      <p>{props.item.comments.title}</p>
+      <p>{props.item.comments.body}</p>
       <p><a href={`http://localhost:3000/departments/${props.department.id}/items`}>Department Items</a></p>
       
       <a href="/">Back</a>
-    </div>
+       </div>
   );
 };
 
-export default Department 
+export default Comment 
+
 
 
 // this page needs to link to Items Index.  How?  departments/department_id/items

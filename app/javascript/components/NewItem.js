@@ -8,9 +8,9 @@ const NewItem = (props) => {  //this is the hash from the items controller#new
 
       <form action={`/departments/${department.id}/items`} method="post">
         <p>Name</p>
-        <input />
-        <p>Sale true or false:</p>
-        <input />
+        <input name="item[name]" />
+        <p>Sale:</p>
+        <input type="checkbox" name="item[sale]" />
         <button>Add</button>
       </form>
     </div>

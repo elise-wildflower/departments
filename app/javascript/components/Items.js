@@ -5,15 +5,16 @@ export default (props) =>  {
     const { items, department } = props;   //takes the items off of the props so you don't have to write props.item props.item
     return (
       <>
-        <h1>Items</h1>
+      <div>
+        <h1>{department.name} Items</h1>
         <a href={`http://localhost:3000/departments/${department.id}/items/new`}>Add item</a>
         <a href={`http://localhost:3000/departments`}>Back</a>
-
+      </div>
         {items.map((item) => (
           <div key={item.id} style={{ backgroundColor:"lightgreen", border: "1px solid", margin: "40px", padding:"2px 0 25px 25px" }}>
            <h1>{item.name}</h1>
            <h3>{"On sale: "}{item.sale}</h3>
-            <a href={`http://localhost:3000/departments/${department.id}/items/${item.id}`} style={{padding:"7px"}}>Show</a>
+            <a href={`http://localhost:3000/departments/${department.id}/items/${item.id}`} style={{padding:"7px"}}>Show Item and Comments. From where? /items/item.id? or items/item.id/comments?</a>
             <a href={`http://localhost:3000/departments/${department.id}/items/${item.id}/edit`}style={{padding:"7px"}}>Edit</a>
             <a href={`http://localhost:3000/departments/${department.id}/items/${item.id}`} data-method="delete">Delete</a>
           </div>
