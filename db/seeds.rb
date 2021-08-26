@@ -19,8 +19,11 @@ Item.destroy_all
   5.times do
     d1.items.create(
       name: Faker::Game.platform,
-      sale: false)
+      sale: rand(2).even?)
   end
+
+
+  ## 
   #   3.times do
   #     Comment.create(
   #       title: Faker::Verb.simple_present,
@@ -29,3 +32,21 @@ Item.destroy_all
   # end
 end
 
+# require "faker"
+# Department.destroy_all
+# Item.destroy_all
+
+
+
+# programming = Department.create(name: "Programming")
+# bob_ross = Department.create(name: "Bob Ross")
+# music = Department.create(name: "Music")
+
+# programming.items.create(name:"Javascript", body:'Js is the language od the web and totes my faves')
+# programming.items.create(name:"Ruby", body:'Ruby is the language of the rails')
+
+# Item.create(name:'all about happy trees', body:"bob roos likes to paint trees", Department_id:bob_ross.id)
+# Item.create(name:'all about happy Mountains', body:"bob ross likes to paint Mountains", Department_id:bob_ross.id)
+
+# music.items.create(name:'80s synth', body:'totes mcgee my friend')
+# music.items.create(name:'90s synth', body:'does this exist?')

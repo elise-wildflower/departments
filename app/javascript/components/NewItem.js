@@ -1,12 +1,12 @@
 import React from 'react'
 
 const NewItem = (props) => {  //this is the hash from the items controller#new 
-  const { banana } = props;
+  const { department } = props;
   return (
     <div>
       <h1>New Item</h1>
 
-      <form action={`/departments/${banana.id}/items`} method="post">
+      <form action={`/departments/${department.id}/items`} method="post">
         <p>Name</p>
         <input />
         <p>Sale true or false:</p>
