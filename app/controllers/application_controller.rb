@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :null_session
 end
 
 # For your assignment you will be creating a department store with multiple departments, and each department has items for sale.
@@ -7,7 +8,7 @@ end
 
 # BASIC OBJECTIVES:
 
-# 1. Create a department model and an item model. (A department "has many" items for sale).
+# 1. Create a department model and an item model. (A department "has many" items for sale). DONE
 
 # 2. Using nested routes allow departments to have items.
 
