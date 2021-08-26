@@ -17,12 +17,12 @@ class CommentsController < ApplicationController
 
 private 
 
-  # def set_department
-  #   @department = Department.find(params[:department_id])
-  # end
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 
-  # def set_item
-  #   @item = @department.items.find(params[:id])
+  # def set_comment
+  #   @comment = @department.items.find(params[:id])
   # end
 
 end

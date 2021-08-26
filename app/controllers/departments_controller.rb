@@ -37,8 +37,8 @@ class DepartmentsController < ApplicationController
 
   def update
     # @department = department.find(params[:id])
-    if department.update(department_params)
-      redirect_to departments_path
+    if @department.update(department_params)
+      redirect_to root_path
     end
   end
 

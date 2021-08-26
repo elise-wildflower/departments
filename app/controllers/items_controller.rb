@@ -8,10 +8,10 @@ class ItemsController < ApplicationController
       render component: "Items", props:{department: @department, items: @department.items}
     end
   
-    def show
-      @item = @department.items.find(params[:id])
-      render component: "Comments", props:{item:@item, comments:@item.comments}# ADD HIS CODE HERE THAT TAKES YOU TO THE ITEM AND ITS COMMENTS
-    end
+    # def show
+    #   @item = @department.items.find(params[:id])
+    #   render component: "Comments", props:{item:@item, comments:@item.comments}# ADD HIS CODE HERE THAT TAKES YOU TO THE ITEM AND ITS COMMENTS
+    # end
 
     def new
       render component: "NewItem", props:{department:@department}  #Putting in the value of department where we write the key "banana" in NewItem
@@ -43,6 +43,10 @@ class ItemsController < ApplicationController
 
 
     private
+
+    def item_params
+      params.require(:item).permit(:name, :sale)
+    end
     
     def set_department
       @department = Department.find(params[:department_id])
