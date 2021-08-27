@@ -11,7 +11,7 @@ const EditItem = (props) => {  //this is the hash from the items controller#new
         <p>Name</p>
         <input defaultValue={item.name} name="item[name]" />
         <p>Check Box if {item.name} is on sale</p>
-        <input type="checkbox" checked={item.sale} name="item[sale]" />
+        <input type="checkbox" defaultChecked={item.sale} name="item[sale]" />
         <button>Add</button>
       </form>
     </div>
