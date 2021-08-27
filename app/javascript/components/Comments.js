@@ -13,10 +13,9 @@ const Comments = (props) => {
     </div>
 
       {comments.map((comment) => (
-        <div key={comment.id} style={{ backgroundColor:"lightgreen", border: "1px solid", margin: "40px", padding:"2px 0 25px 25px" }}>
+        <div key={comment.id} style={{ backgroundColor:"lightsalmon", border: "1px solid", margin: "40px", padding:"2px 0 25px 25px" }}>
          <h1>{comment.title}</h1>
          <h3>{comment.body}</h3>
-          <a href={`http://localhost:3000/items/${item.id}/comments/${comment.id}`} style={{padding:"7px"}}>Show NOTHING</a>
           <a href={`http://localhost:3000/items/${item.id}/comments/${comment.id}/edit`}style={{padding:"7px"}}>Edit</a>
           <a href={`http://localhost:3000/items/${item.id}/comments/${comment.id}`} data-method="delete">Delete</a>
           </div>

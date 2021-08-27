@@ -23,6 +23,13 @@ class CommentsController < ApplicationController
 
 
   def edit
+    render component: "EditComment", props:{item:@item, comment:@comment}
+  end
+
+  def update
+    if(@comment.update(comment_params))
+      redirect_to item_comments_path(@item.id)
+    end
   end
 
 
