@@ -14,24 +14,25 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @item.comments.new(comment_params)
-    if(@comment.save)
+    comment = @item.comments.new(comment_params)
+    if(comment.save)
       redirect_to item_comments_path(@item.id)
     else
     end
   end
 
-  # def create
-  #   @item = @department.items.new(item_params)  # The boolean might be throwing things off
-  #   if(@item.save)
-  #     redirect_to department_items_path(@department.id)
-  #   else
-  #   end
-  # end
-
 
   def edit
   end
+
+
+
+
+  def destroy
+    @comment.destroy
+    redirect_to item_comments_path
+  end
+
 
 private 
 
@@ -44,7 +45,7 @@ private
   end
 
   def set_comment
-    @comment = @item.comment.find(params[:id])
+    @comment = @item.comments.find(params[:id])
   end
 
 end
